@@ -26,11 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     ringsprogressbar.cpp \
-    radiusprogressbar.cpp
+    radiusprogressbar.cpp \
+    ringsmapprogressbar.cpp \
+    animationprogressbar.cpp
 
 HEADERS  += mainwindow.h \
     ringsprogressbar.h \
-    radiusprogressbar.h
+    radiusprogressbar.h \
+    ringsmapprogressbar.h \
+    animationprogressbar.h
 
 FORMS    += mainwindow.ui
 

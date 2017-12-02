@@ -1,14 +1,14 @@
-#include "ringsprogressbar.h"
+#include "ringsmapprogressbar.h"
 #include <QPainter>
 
-RingsProgressbar::RingsProgressbar(QWidget *parent) : QWidget(parent),
+RingsMapProgressbar::RingsMapProgressbar(QWidget *parent) : QWidget(parent),
     m_rotateAngle(0),
     m_persent(0)
 {
 
 }
 
-void RingsProgressbar::setPersent(int persent)
+void RingsMapProgressbar::setPersent(int persent)
 {
     if(persent != m_persent)
     {
@@ -17,7 +17,8 @@ void RingsProgressbar::setPersent(int persent)
     }
 }
 
-void RingsProgressbar::paintEvent(QPaintEvent *)
+
+void RingsMapProgressbar::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
     p.setRenderHint(QPainter::Antialiasing);
@@ -29,19 +30,18 @@ void RingsProgressbar::paintEvent(QPaintEvent *)
     QRectF inRect(20, 20, side-40, side-40);
     QString valueStr = QString("%1%").arg(QString::number(m_persent));
 
-    //画外圆
+    //画底圆
     p.setPen(Qt::NoPen);
-    p.setBrush(QBrush(QColor(97, 117, 118)));
-    p.drawEllipse(outRect);
-    p.setBrush(QBrush(QColor(255, 107, 107)));
+    QPixmap backMap = QPixmap(":/resource/progress_back.png");
+    p.drawPixmap(outRect, backMap, outRect);
+    //画内弧
+    QPixmap frontMap = QPixmap(":/resource/progress_front.png");
+    p.setBrush(QBrush(frontMap));
     p.drawPie(outRect, (90-m_rotateAngle)*16, m_rotateAngle*16);
-    //画遮罩
-    p.setBrush(palette().window().color());
-    p.drawEllipse(inRect);
     //画文字
     QFont f = QFont("Microsoft YaHei", 15, QFont::Bold);
     p.setFont(f);
-    p.setFont(f);
-    p.setPen(QColor("#555555"));
+    p.setPen(QColor("#DDDDDD"));
     p.drawText(inRect, Qt::AlignCenter, valueStr);
 }
+

@@ -14,13 +14,46 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="RingsProgressbar" name="rings" native="true">
+   <widget class="RingsProgressbar" name="bar3" native="true">
     <property name="geometry">
      <rect>
-      <x>49</x>
-      <y>70</y>
-      <width>211</width>
-      <height>181</height>
+      <x>500</x>
+      <y>50</y>
+      <width>200</width>
+      <height>200</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="RingsMapProgressbar" name="bar2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>270</y>
+      <width>200</width>
+      <height>200</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="AnimationProgressbar" name="bar4" native="true">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>270</y>
+      <width>200</width>
+      <height>200</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="RadiusProgressBar" name="bar1" native="true">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>150</y>
+      <width>200</width>
+      <height>61</height>
      </rect>
     </property>
    </widget>
@@ -31,7 +64,25 @@
   <customwidget>
    <class>RingsProgressbar</class>
    <extends>QWidget</extends>
-   <header location="global">ringsprogressbar.h</header>
+   <header>ringsprogressbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RingsMapProgressbar</class>
+   <extends>QWidget</extends>
+   <header>ringsmapprogressbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AnimationProgressbar</class>
+   <extends>QWidget</extends>
+   <header>animationprogressbar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RadiusProgressBar</class>
+   <extends>QWidget</extends>
+   <header>radiusprogressbar.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

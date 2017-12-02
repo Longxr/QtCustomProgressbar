@@ -1,1 +1,9 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/">
+        <file>resource/progress_back.png</file>
+        <file>resource/progress_front.png</file>
+        <file>resource/sequence_animate.png</file>
+        <file>resource/radius_back.png</file>
+        <file>resource/radius_front.png</file>
+    </qresource>
+</RCC>
