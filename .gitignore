@@ -1,0 +1,11 @@
+# ignore user files
+*.user
+*.autosave
+
+# 忽略生成的中间文件
+
+**build**
+
+# 忽略一些草稿文件
+
+**script**
